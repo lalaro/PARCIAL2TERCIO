@@ -60,6 +60,22 @@ public class FuntionServer {
         return sequence.stream().mapToInt(Integer::intValue).toArray();
     }
 
+    private static int[] generateFuntionPrimoSequence(int n) {
+        if (n <= 0) throw new IllegalArgumentException("El número debe ser positivo");
+
+        java.util.List<Integer> sequence = new java.util.ArrayList<>();
+        sequence.add(n);
+
+        while (n == 1) {
+            n = (n % 2 == 0) ? n / 2 : 3 * n + 1;
+            sequence.add(n);
+        }
+
+        // Convertir lista a array
+        return sequence.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+
     private static int getMaxValue(int[] sequence) {
         return java.util.Arrays.stream(sequence).max().orElse(0);
     }

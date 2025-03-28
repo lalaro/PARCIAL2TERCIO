@@ -1,6 +1,5 @@
-com\example\demo\GreetingController.class
+com\example\demo\HTTPServer.class
 com\example\demo\FuntionServer.class
 com\example\demo\FuntionService.class
 com\example\demo\RestServiceApplication.class
-com\example\demo\HttpConnectionExample.class
 com\example\demo\FuntionProxy.class
