@@ -31,10 +31,10 @@ Para elaborar este proyecto requerimos de las siguientes tecnologías:
 
 - **[Spring-boot](https://spring.io/guides/gs/rest-service)**: Entorno para realizar proyectos
 
-
 ---
 
 ###  Instalación
+
 Primero clonamos el repositorio
 
 git clone https://github.com/lalaro/PARCIAL2TERCIO.git
@@ -44,10 +44,7 @@ Se accede al repositorio que acabamos de clonar
 cd Parcial-2
 
 ---
-## Casos de uso 
-
-EC2
-https://amazonxxx.x.xxx.x.xxx:{port}/factors?value=13
+## Casos de uso
 
 Salida. El formato de la salida y la respuesta debe ser un JSON con el siguiente formato
 
@@ -59,9 +56,6 @@ Salida. El formato de la salida y la respuesta debe ser un JSON con el siguiente
 
 Ejemplo 2 de un llamado:
 
-EC2
-https://amazonxxx.x.xxx.x.xxx:{port}/factors?value=112
-
 Salida. El formato de la salida y la respuesta debe ser un JSON con el siguiente formato
 
 {
@@ -71,9 +65,6 @@ Salida. El formato de la salida y la respuesta debe ser un JSON con el siguiente
 }
 
 Ejemplo 3 de un llamado:
-
-EC2
-https://amazonxxx.x.xxx.x.xxx:{port}/primes?value=100
 
 Salida. El formato de la salida y la respuesta debe ser un JSON con el siguiente formato
 
@@ -87,15 +78,26 @@ Salida. El formato de la salida y la respuesta debe ser un JSON con el siguiente
 
 Localmente
 
+Para la función:
 https://localhost:8080/factors?value=13
 
-En AWS:
 
-http://ec2-184-72-207-227.compute-1.amazonaws.com:42000/collatzsequence?number=6
+Para el Proxy:
 
-Un [video]() de muestra del funcionamiento.
+http://localhost:8081/index.html
 
+![image1.jpeg](funtion-service/src/main/resources/images/image1.jpeg)
+![image2.jpeg](funtion-service/src/main/resources/images/image2.jpeg)
+![image3.jpeg](funtion-service/src/main/resources/images/image3.jpeg)
+![image4.png](funtion-service/src/main/resources/images/image4.png)
 
+## Compilar
+
+Para compilar el proyecto 
+
+mvn clean install
+
+mvn spring-boot:run
 
 ---
 

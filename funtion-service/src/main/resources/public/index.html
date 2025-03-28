@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Factores y Primos</title>
+</head>
+<body>
+
+<h1>Buscar Factores y Primos</h1>
+
+<label for="number">Número:</label>
+<input type="number" id="number" min="1" value="1">
+<button onclick="getFactors()">Obtener Factores</button>
+<button onclick="getPrimes(
+)">Obtener Primos</button>
+
+<h2>Resultados:</h2>
+<p id="result">Esperando consulta...</p>
+
+<script>
+    async function getFactors() {
+        let value = document.getElementById("number").value;
+        if (!value) {
+            alert("Por favor, ingresa un número");
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:8080/factors?value=${value}`);
+            if (!response.ok) throw new Error("Error al obtener factores");
+
+            const data = await response.json();
+            document.getElementById("result").innerText = `Factores de ${value}: ${data.output}`;
+        } catch (error) {
+            console.error("Error:", error);
+            alert("No se pudo obtener los factores");
+        }
+    }
+
+    async function getPrimes() {
+        let value = document.getElementById("number").value;
+        if (!value) {
+            alert("Por favor, ingresa un número");
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:8080/primes?value=${value}`);
+            if (!response.ok) throw new Error("Error al obtener primos");
+
+            const data = await response.json();
+            document.getElementById("result").innerText = `Primos hasta ${value}: ${data.output}`;
+        } catch (error) {
+            console.error("Error:", error);
+            alert("No se pudo obtener los primos");
+        }
+    }
+</script>
+
+</body>
+</html>
