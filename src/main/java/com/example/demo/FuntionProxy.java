@@ -6,7 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import com.example.demo.FuntionService;
 import static java.lang.reflect.Array.get;
-
+import com.example.demo.FuntionServer;
 public class FuntionProxy {
     private static String[] SERVICES = {
             System.getenv("SERVICE1_URL") != null ? System.getenv("SERVICE1_URL") : "http://localhost:4567",
@@ -21,10 +21,11 @@ public class FuntionProxy {
         //get("/funtionsequence", (req, res) -> proxyRequest(req, res));
     }
 
-    private static void port(int port) {
+    static void port(int port) {
     }
 
     /*
+
     private static Object proxyRequest(Request req, Response res) {
         try {
             String serviceUrl = SERVICES[currentService];

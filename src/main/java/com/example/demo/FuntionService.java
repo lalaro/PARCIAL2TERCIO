@@ -1,27 +1,26 @@
 package com.example.demo;
 
-/*
-import static com.example.demo.FuntionProxy.port;
-import static spark.Spark.*;
-        import spark.Request;
-import spark.Response;
-import org.json.JSONObject;
 
- */
+import static com.example.demo.FuntionProxy.port;
+//import org.json.JSONObject;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 //import org.json.JSONArray;
 
 
 public class FuntionService {
-    /*
+
     public static void main(String[] args) {
         port(getPort());
-        get("/factors", (req, res) -> processCollatzSequence(req, res));
+        System.out.println("Hola mundo");
+        //get("/factors", (req, res) -> processCollatzSequence(req, res));
     }
 
+    private static void get(String s, Object o) {
+    }
+
+    /*
     private static Object processCollatzSequence(Request req, Response res) {
         res.type("application/json");
         String numberStr = req.queryParams("number");
